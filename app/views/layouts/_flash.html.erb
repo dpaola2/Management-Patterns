@@ -1,0 +1,33 @@
+<%= turbo_frame_tag flash do %>
+  <% if flash[:notice].present? %>
+    <div class="row bg-light bg-gradient text-dark p-3">
+      <div class="col">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if flash[:alert].present? %>
+    <div class="row bg-warning bg-gradient text-dark p-3">
+      <div class="col">
+        <%= flash[:alert] %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if flash[:success].present? %>
+    <div class="row bg-success bg-gradient text-light p-3">
+      <div class="col">
+        <%= flash[:success] %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if flash[:error].present? %>
+    <div class="row bg-danger bg-gradient text-white p-3">
+      <div class="col">
+        <%= flash[:error] %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
