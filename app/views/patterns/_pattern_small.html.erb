@@ -4,8 +4,10 @@
       <!-- <%= truncate(strip_tags(pattern.body.to_plain_text), length: 256) %>-->
       <%= pattern.body %>
     </div>
-    <div class="card-footer text-muted">
-      <%= link_to "View", pattern_path(pattern) %>
-    </div>
+    <% if policy(pattern).show? %>
+      <div class="card-footer text-muted">
+        <%= link_to "View", pattern_path(pattern) %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -1,4 +1,6 @@
-<%= link_to "New pattern", new_pattern_path, class: "btn btn-primary my-3" %>
+<% if policy(:pattern).new? %>
+  <%= link_to "New pattern", new_pattern_path, class: "btn btn-primary my-3" %>
+<% end %>
 
 <div id="patterns">
   <div class="row row-cols-1 row-cols-md-3 g-4">

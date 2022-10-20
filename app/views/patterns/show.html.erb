@@ -7,13 +7,19 @@
   </ol>
 </nav>
 
-<%= link_to "New pattern", new_pattern_path, class: "btn btn-primary" %>
+<% if policy(:pattern).new? %>
+  <%= link_to "New pattern", new_pattern_path, class: "btn btn-primary" %>
+<% end %>
 
 
 <%= render "patterns/pattern", pattern: @pattern %>
 
 <div>
-  <%= link_to "Edit this pattern", edit_pattern_path(@pattern), class: "btn btn-warning" %>
+  <% if policy(@pattern).edit? %>
+    <%= link_to "Edit this pattern", edit_pattern_path(@pattern), class: "btn btn-warning" %>
+  <% end %>
   
-  <%= button_to "Destroy this pattern", @pattern, method: :delete, class: 'btn btn-danger mt-2' %>
+  <% if policy(@pattern).destroy? %>
+    <%= button_to "Destroy this pattern", @pattern, method: :delete, class: 'btn btn-danger mt-2' %>
+  <% end %>
 </div>

@@ -4,24 +4,29 @@ class PatternsController < ApplicationController
   # GET /patterns or /patterns.json
   def index
     @patterns = Pattern.all.shuffle
+    authorize Pattern
   end
 
   # GET /patterns/1 or /patterns/1.json
   def show
+    authorize @pattern
   end
 
   # GET /patterns/new
   def new
     @pattern = Pattern.new
+    authorize @pattern
   end
 
   # GET /patterns/1/edit
   def edit
+    authorize @pattern
   end
 
   # POST /patterns or /patterns.json
   def create
     @pattern = Pattern.new(pattern_params)
+    authorize @pattern
 
     respond_to do |format|
       if @pattern.save
@@ -36,6 +41,7 @@ class PatternsController < ApplicationController
 
   # PATCH/PUT /patterns/1 or /patterns/1.json
   def update
+    authorize @pattern
     respond_to do |format|
       if @pattern.update(pattern_params)
         format.html { redirect_to pattern_url(@pattern), notice: "Pattern was successfully updated." }
@@ -49,6 +55,7 @@ class PatternsController < ApplicationController
 
   # DELETE /patterns/1 or /patterns/1.json
   def destroy
+    authorize @pattern
     @pattern.destroy
 
     respond_to do |format|
