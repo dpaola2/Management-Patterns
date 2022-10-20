@@ -9,13 +9,13 @@
 <%= link_to "New pattern", new_pattern_path, class: "btn btn-primary" %>
 
 <div id="patterns">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @patterns.each do |pattern| %>
-    <%= render pattern %>
-    <p>
-      <%= link_to "Show this pattern", pattern %>
-    </p>
-    
-  <% end %>
+      <div class="col">
+        <%= render "patterns/pattern_small", pattern: pattern %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 

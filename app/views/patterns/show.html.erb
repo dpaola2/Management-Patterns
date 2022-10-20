@@ -10,7 +10,7 @@
 <%= link_to "New pattern", new_pattern_path, class: "btn btn-primary" %>
 
 
-<%= render @pattern %>
+<%= render "patterns/pattern", pattern: @pattern %>
 
 <div>
   <%= link_to "Edit this pattern", edit_pattern_path(@pattern), class: "btn btn-warning" %>

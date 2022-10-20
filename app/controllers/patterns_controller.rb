@@ -3,7 +3,7 @@ class PatternsController < ApplicationController
 
   # GET /patterns or /patterns.json
   def index
-    @patterns = Pattern.all
+    @patterns = Pattern.all.shuffle
   end
 
   # GET /patterns/1 or /patterns/1.json
