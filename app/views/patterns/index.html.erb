@@ -1,6 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Home", patterns_path %>
+    </li>
+  </ol>
+</nav>
 
-<h1>Management Patterns</h1>
+<%= link_to "New pattern", new_pattern_path, class: "btn btn-primary" %>
 
 <div id="patterns">
   <% @patterns.each do |pattern| %>
@@ -11,4 +17,4 @@
   <% end %>
 </div>
 
-<%= link_to "New pattern", new_pattern_path %>
+

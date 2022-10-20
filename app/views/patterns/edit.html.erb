@@ -1,4 +1,16 @@
-<h1>Editing pattern</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Home", patterns_path %>
+    </li>
+
+    <li class="breadcrumb-item">
+      <%= link_to @pattern.name, pattern_path(@pattern) %>
+    </li>
+
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+  </ol>
+</nav>
 
 <%= render "form", pattern: @pattern %>
 
